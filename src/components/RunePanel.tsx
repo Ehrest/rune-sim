@@ -126,7 +126,7 @@ function RunePanel(props: Props) {
 
     computeRuneSet();
 
-    const handleRuneChangeType = (newRune: Rune, statIndex: StatIndex, newStatType: StatType) => {
+    const handleRuneChangeType = (newRune: Rune) => {
         setRunes(
             runes.map((rune) => {
                 if (rune.slot.value === newRune.slot.value)
@@ -140,7 +140,7 @@ function RunePanel(props: Props) {
         props.onRuneChange(runes, enabledRuneSet);
     };
 
-    const handleRuneChangeValue = (newRune: Rune, statIndex: StatIndex, newValue: number) => {
+    const handleRuneChangeValue = (newRune: Rune) => {
         setRunes(
             runes.map((rune) => {
                 if (rune.slot.value === newRune.slot.value)
@@ -154,7 +154,7 @@ function RunePanel(props: Props) {
         props.onRuneChange(runes, enabledRuneSet);
     };
 
-    const handleRuneSetChange = (newRune: Rune, newRuneSet: RuneSet) => {
+    const handleRuneSetChange = (newRune: Rune) => {
         setRunes(
             runes.map((rune) => {
                 if (rune.slot.value === newRune.slot.value)

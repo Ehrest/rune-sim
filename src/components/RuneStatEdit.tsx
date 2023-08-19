@@ -1,14 +1,13 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import FormControlElement from 'react-bootstrap/Form';
 import { StatType, StatIndex, Rune } from './RuneDefinition';
 
 interface Props {
     statIndex: StatIndex,
     rune: Rune;
-    onChangeType: (rune: Rune, statIndex: StatIndex, statType: StatType) => void;
-    onChangeValue: (rune: Rune, statIndex: StatIndex, newValue: number) => void;
+    onChangeType: (rune: Rune) => void;
+    onChangeValue: (rune: Rune) => void;
 }
 
 function RuneStatEdit(props: Props) {
@@ -49,7 +48,7 @@ function RuneStatEdit(props: Props) {
                 break;
         }
 
-        props.onChangeType(props.rune, props.statIndex, newType);
+        props.onChangeType(props.rune);
     }
 
     const getStatTypeIndex = () =>
@@ -95,7 +94,7 @@ function RuneStatEdit(props: Props) {
                 break;
         }
 
-        props.onChangeValue(props.rune, props.statIndex, newValue);
+        props.onChangeValue(props.rune);
     }
 
     const getStatValue = () =>

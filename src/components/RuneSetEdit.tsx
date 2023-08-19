@@ -1,11 +1,11 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import { RuneSet, RuneSlotRestriction, StatType, Stat, Rune } from './RuneDefinition';
+import { RuneSet, Rune } from './RuneDefinition';
 
 interface Props {
     rune: Rune;
-    onChangeType: (rune: Rune, runeSet: RuneSet) => void;
+    onChangeType: (rune: Rune) => void;
 }
 
 function RuneSetEdit(props: Props) {
@@ -31,7 +31,7 @@ function RuneSetEdit(props: Props) {
     const onSelectSet = (index : number) =>
     {
         props.rune.set = runeSets[index];
-        props.onChangeType(props.rune, props.rune.set);
+        props.onChangeType(props.rune);
     }
 
     const runeSetSelect = runeSets.map((item, index) =>
